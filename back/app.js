@@ -10,7 +10,9 @@ import { CreateUsuarioRouter } from './router/Usuario.js';
 
 const app = express()
 
-app.use(cors({origin: '*'}))
+app.use(cors({origin: '*',
+     credentials: true
+}))
 
 app.use(express.json())
 
