@@ -20,7 +20,7 @@ app.use(express.urlencoded({}))
 
 const SECRET_KEY = process.env.SECRET_KEY
 app.use((req,res,next) => {
-    const token = req.cookies.acces_token
+    const token = req.cookies.access_token
     let data = null
 
     req.session = {user : null}
