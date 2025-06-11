@@ -13,7 +13,9 @@ export default class SolicitudController {
 
             const newSolicitud = new Solicitud(datos).populate("usuario")
             const savedSolicitud = await newSolicitud.save()
-            return res.status(201).json(savedSolicitud)
+
+            const solicitudCompleta = await Solicitud.findById(savedSolicitud._id).populate("usuario");
+            return res.status(201).json(solicitudCompleta)
         } catch (error) {
             return res.status(400).send(error.message || error)
         }
