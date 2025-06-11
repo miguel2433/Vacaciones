@@ -11,7 +11,7 @@ export default class SolicitudController {
                 return res.status(404).send("Usuario no encontrado")
             }
 
-            const newSolicitud = new Solicitud(datos).populate("usuario")
+            const newSolicitud = new Solicitud(datos)
             const savedSolicitud = await newSolicitud.save()
 
             const solicitudCompleta = await Solicitud.findById(savedSolicitud._id).populate("usuario");
