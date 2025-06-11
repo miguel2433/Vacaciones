@@ -11,7 +11,7 @@ export default class SolicitudController {
                 return res.status(404).send("Usuario no encontrado")
             }
 
-            const newSolicitud = new Solicitud(datos)
+            const newSolicitud = new Solicitud(datos).populate("usuario")
             const savedSolicitud = await newSolicitud.save()
             return res.status(201).json(savedSolicitud)
         } catch (error) {
