@@ -117,13 +117,14 @@ export default class UsuarioController{
             .cookie("access_token", token, {
             httpOnly: true,
             sameSite: "strict",
-            maxAge: 1000 * 60 * 60, // 1 hora
+            maxAge: 1000 * 60 * 60, 
             })
             .status(200)
             .header("Authorization", `Bearer ${token}`)
             .json({
                 message: "Login exitoso",
-                usuario: user
+                usuario: user,
+                token: token
             });
         } catch (error) {
         console.error("Error en login:", error);
