@@ -1,10 +1,10 @@
 import { useState } from 'react'
-
+import { AppRoutes } from './rutas/rutas'
 
 function App() {
 
   return (
-    <p className='text-3xl underline text-red-600'>Hello world</p>
+    <AppRoutes />
   )
 }
 
