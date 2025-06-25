@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
-const API_URL = "https://c24-69-webapp.onrender.com/usuario";
+const API_URL = "https://vacaciones-6mwb.onrender.com/api/usuario";
 
 export const loginService = async (correo, contrasena) => {
   const response = await fetch(`${API_URL}/login`, {

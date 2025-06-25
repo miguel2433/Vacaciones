@@ -14,13 +14,8 @@ const handleSubmit = async (e) => {
   const correo = data.get("correo");
   const contrasena = data.get("contrasena");
 
-  for (let pair of data.entries()) {
-    console.log(`${pair[0]}: ${pair[1]}`);
-  }
-
   try {
     const res = await login(correo, contrasena);
-    console.log("respuesta de login:", res);
 
     if (!res.error) {
       navigate("/");
